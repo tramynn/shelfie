@@ -19,7 +19,7 @@ class Header extends Component {
             <ul>
               <li className="Nav-btn">
                 <button>
-                  <Link to="/">Header</Link>
+                  <Link to="/">Dashboard</Link>
                 </button>
               </li>
               <li className="Nav-btn">

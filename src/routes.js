@@ -7,5 +7,6 @@ export default (
   <Switch>
     <Route exact path="/" component={Dashboard} />
     <Route path="/addinventory" component={Form} />
+    {/* <Route path="/editinventory" component={EditForm} /> */}
   </Switch>
 );

@@ -16,9 +16,9 @@ massive(CONNECTION_STRING)
 app.use(express.json());
 
 // add inventory
-app.post("/api/products", inventoryController.addProduct);
+app.post("/api/inventory", inventoryController.addProduct);
 // retrieve all products
-app.get("/api/products", inventoryController.getAllProducts);
+app.get("/api/inventory", inventoryController.getInventory);
 // retrieve one product
 app.get("/api/products/:id", inventoryController.getOneProduct);
 // edit product

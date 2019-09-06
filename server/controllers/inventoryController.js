@@ -16,10 +16,10 @@ const addProduct = (req, res, next) => {
     });
 };
 
-const getAllProducts = (req, res, next) => {
+const getInventory = (req, res, next) => {
   const dbInstance = req.app.get("db");
   dbInstance
-    .getAllProducts()
+    .getInventory()
     .then(products => {
       res.status(200).json(products);
     })
@@ -91,7 +91,7 @@ const deleteProduct = (req, res, next) => {
 
 module.exports = {
   addProduct,
-  getAllProducts,
+  getInventory,
   getOneProduct,
   editProduct,
   deleteProduct

@@ -11,15 +11,17 @@ class Form extends Component {
       productName: "",
       price: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = e => {
+  handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
     });
-  };
+  }
 
-  handleSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault();
     axios
       .post("/api/products", {
@@ -35,7 +37,7 @@ class Form extends Component {
       .catch(err => {
         console.log(err);
       });
-  };
+  }
 
   cancelForm = () => {
     this.setState({
