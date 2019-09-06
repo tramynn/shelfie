@@ -11,18 +11,18 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <nav>
+        <nav className="NavBar">
           <section className="Logo">
             <h1>Shelfie</h1>
           </section>
           <section className="Logo-links">
             <ul>
-              <li>
+              <li className="Nav-btn">
                 <button>
                   <Link to="/">Header</Link>
                 </button>
               </li>
-              <li>
+              <li className="Nav-btn">
                 <Link to="/addinventory">
                   <button>Add inventory</button>
                 </Link>
