@@ -20,7 +20,7 @@ app.post("/api/products", inventoryController.addProduct);
 // retrieve all products
 app.get("/api/products", inventoryController.getAllProducts);
 // retrieve one product
-app.get("/api/products/id", inventoryController.getOneProduct);
+app.get("/api/products/:id", inventoryController.getOneProduct);
 // edit product
 app.put("/api/products/:id", inventoryController.editProduct);
 // delete product
