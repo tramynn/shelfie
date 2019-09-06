@@ -1,10 +1,31 @@
-.App {
+.Form-add {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  background-color: #34d886;
+  width: 50vw;
+  height: 25vh;
+  padding: 15px;
 }
 
-.App-body {
-  text-align: center;
+.Inputs > input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Form-labels {
+  display: flex;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 3px;
 }

@@ -1,6 +1,10 @@
 .NavBar {
+  color: white;
   display: flex;
   align-items: center;
+  background-color: #ab2a19;
+  width: 100vw;
+  height: 10vh;
 }
 
 .Logo-Links {

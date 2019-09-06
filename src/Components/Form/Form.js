@@ -6,7 +6,7 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      products: [],
+      image: "",
       imageURL: "",
       productName: "",
       price: ""
@@ -53,34 +53,38 @@ class Form extends Component {
         </header>
         <main className="Form-main" onSubmit={this.handleSubmit}>
           <form className="Form-add">
-            <section className="Image"></section>
-            <section className="Inputs">
-              <label for="image">Image URL:</label>
-              <input
-                name="imageURL"
-                onChange={this.handleChange}
-                placeholder=""
-                value={this.state.imageURL}
-              />
-              <label>Product Name:</label>
-              <input
-                name="productName"
-                onChange={this.handleChange}
-                placeholder="The Ordinary: Niacinamide 10% + Zinc 1% - 30ml"
-                value={this.state.productName}
-              />
-              <label>Price:</label>
-              <input
-                name="price"
-                onChange={this.handleChange}
-                placeholder="0.00"
-                value={this.state.price}
-              />
+            <picture className="Image-view">IMAGE</picture>
+            <section className="Inputs-Container">
+              <div className="Inputs">
+                <label className="Form-labels">Image URL:</label>
+                <input
+                  name="imageURL"
+                  onChange={this.handleChange}
+                  placeholder=""
+                  value={this.state.imageURL}
+                />
+                <label className="Form-labels">Product Name:</label>
+                <input
+                  name="productName"
+                  onChange={this.handleChange}
+                  placeholder="The Ordinary: Niacinamide 10% + Zinc 1% - 30ml"
+                  value={this.state.productName}
+                />
+                <label className="Form-labels">Price:</label>
+                <input
+                  name="price"
+                  onChange={this.handleChange}
+                  placeholder="0.00"
+                  value={this.state.price}
+                />
+              </div>
             </section>
-            <section className="Buttons">
-              <button onClick={this.cancelForm}>Cancel</button>
-              <button type="submit">Add to Inventory</button>
-            </section>
+            <div className="From-buttons-container">
+              <section className="Form-buttons">
+                <button onClick={this.cancelForm}>Cancel</button>
+                <button type="submit">Add to Inventory</button>
+              </section>
+            </div>
           </form>
         </main>
       </div>
