@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Header.css";
-import Dashboard from "../Dashboard/Dashboard";
-import Form from "../Form/Form";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   constructor() {
@@ -12,23 +11,25 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <section className="Logo">
-          <h1>Shelfie</h1>
-        </section>
-        <section className="Logo-links">
-          <ul>
-            <li>
-              <button>
-                <Dashboard />
-              </button>
-            </li>
-            <li>
-              <button>
-                <Form />
-              </button>
-            </li>
-          </ul>
-        </section>
+        <nav>
+          <section className="Logo">
+            <h1>Shelfie</h1>
+          </section>
+          <section className="Logo-links">
+            <ul>
+              <li>
+                <button>
+                  <Link to="/">Header</Link>
+                </button>
+              </li>
+              <li>
+                <Link to="/addinventory">
+                  <button>Add inventory</button>
+                </Link>
+              </li>
+            </ul>
+          </section>
+        </nav>
       </div>
     );
   }
