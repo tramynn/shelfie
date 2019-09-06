@@ -41,6 +41,7 @@ class Form extends Component {
 
   cancelForm = () => {
     this.setState({
+      image: "",
       imageURL: "",
       productName: "",
       price: ""

@@ -1,3 +1,12 @@
+const products = [
+  {
+    id: 1,
+    imageURL: "",
+    productName: "",
+    price: ""
+  }
+];
+
 const addProduct = (req, res, next) => {
   const dbInstance = req.app.get("db");
   const { image_url, product_name, price } = req.body;

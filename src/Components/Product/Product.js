@@ -1,30 +1,23 @@
 import React, { Component } from "react";
 import "./Product.css";
-// import Axios from "axios";
 
 class Product extends Component {
-  constructor() {
-    super();
-    this.state = {
-      product: []
-    };
-  }
-
-  // componentDidMount() {
-  //   Axios.get(`/api/products/${id}`)
-  //     .then(response => {
-  //       this.setState({
-  //         product: response.data
-  //       });
-  //     })
-  //     .catch(err => console.log(err));
-  // }
-
   render() {
+    let productDisplay = this.props.products.map((product, index) => {
+      return (
+        <div key={index}>
+          <ul>
+            <li>{product.imageURL}</li>
+            <li>{product.productName}</li>
+            <li>{product.price}</li>
+          </ul>
+        </div>
+      );
+    });
     return (
       <div className="Product">
         <h1>Product</h1>
-        <section className="Product-display"></section>
+        <section className="Product-display">{productDisplay}</section>
       </div>
     );
   }
