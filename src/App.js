@@ -8,7 +8,10 @@ function App() {
   return (
     <HashRouter>
       <div className="App">
-        <nav className="Header"></nav>
+        <nav>
+          <Link to="/">Dashboard</Link>
+        </nav>
+        {routes}
       </div>
     </HashRouter>
   );
