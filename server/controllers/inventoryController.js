@@ -34,30 +34,11 @@ const getInventory = (req, res, next) => {
     });
 };
 
-// const getOneProduct = (req, res, next) => {
-//   const dbInstance = req.app.get("db");
-
-//   const { id } = req.params;
-
-//   dbInstance
-//     .getOneProduct(id)
-//     .then(product => {
-//       res.status(200).json(product);
-//     })
-//     .catch(err => {
-//       res.status(500).json({
-//         errorMessage:
-//           "Oops! Something went wrong. Our engineers have been informed."
-//       });
-//       console.log(err);
-//     });
-// };
-
 const editProduct = (req, res, next) => {
   const dbInstance = req.app.get("db");
 
   const { params } = req;
-  // always destuctuer req.body bc put
+  // always destucture req.body bc put
   const { image_url, product_name, price } = req.body;
 
   dbInstance

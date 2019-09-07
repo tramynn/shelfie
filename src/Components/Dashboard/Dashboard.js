@@ -22,6 +22,20 @@ class Dashboard extends Component {
         console.log(err);
       });
   }
+
+  deleteProduct = id => {
+    Axios.delete(`/api/products/${id}`);
+    Axios.get("/api/inventory")
+      .then(response => {
+        this.setState({
+          products: response.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   render() {
     const { products } = this.state;
     return (
