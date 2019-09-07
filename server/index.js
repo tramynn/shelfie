@@ -19,8 +19,6 @@ app.use(express.json());
 app.post("/api/inventory", inventoryController.addProduct);
 // retrieve all products
 app.get("/api/inventory", inventoryController.getInventory);
-// retrieve one product
-app.get("/api/products/:id", inventoryController.getOneProduct);
 // edit product
 app.put("/api/products/:id", inventoryController.editProduct);
 // delete product

@@ -1,15 +1,8 @@
-const products = [
-  {
-    id: 1,
-    imageURL: "",
-    productName: "",
-    price: ""
-  }
-];
-
 const addProduct = (req, res, next) => {
   const dbInstance = req.app.get("db");
-  const { image_url, product_name, price } = req.body;
+  // when destructuring off of req.body, you want to make sure the names are aligned or
+  // setting them to the naming convention from sql
+  const { imageURL: image_url, productName: product_name, price } = req.body;
 
   dbInstance
     .addProduct([image_url, product_name, price])
@@ -41,32 +34,34 @@ const getInventory = (req, res, next) => {
     });
 };
 
-const getOneProduct = (req, res, next) => {
-  const dbInstance = req.app.get("db");
+// const getOneProduct = (req, res, next) => {
+//   const dbInstance = req.app.get("db");
 
-  const { id } = req.params;
+//   const { id } = req.params;
 
-  dbInstance
-    .getOneProduct(id)
-    .then(product => {
-      res.status(200).json(product);
-    })
-    .catch(err => {
-      res.status(500).json({
-        errorMessage:
-          "Oops! Something went wrong. Our engineers have been informed."
-      });
-      console.log(err);
-    });
-};
+//   dbInstance
+//     .getOneProduct(id)
+//     .then(product => {
+//       res.status(200).json(product);
+//     })
+//     .catch(err => {
+//       res.status(500).json({
+//         errorMessage:
+//           "Oops! Something went wrong. Our engineers have been informed."
+//       });
+//       console.log(err);
+//     });
+// };
 
 const editProduct = (req, res, next) => {
   const dbInstance = req.app.get("db");
 
-  const { params, query } = req;
+  const { params } = req;
+  // always destuctuer req.body bc put
+  const { image_url, product_name, price } = req.body;
 
   dbInstance
-    .editProduct([params.id, query])
+    .editProduct(image_url, product_name, price, params.id)
     .then(() => {
       res.sendStatus(200);
     })
@@ -101,7 +96,6 @@ const deleteProduct = (req, res, next) => {
 module.exports = {
   addProduct,
   getInventory,
-  getOneProduct,
   editProduct,
   deleteProduct
 };

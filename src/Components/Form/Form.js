@@ -6,10 +6,10 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      image: "",
+      products: [],
       imageURL: "",
       productName: "",
-      price: ""
+      price: 0
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,7 +24,7 @@ class Form extends Component {
   handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("/api/products", {
+      .post("/api/inventory", {
         imageURL: this.state.imageURL,
         productName: this.state.productName,
         price: this.state.price
@@ -49,13 +49,14 @@ class Form extends Component {
   };
 
   render() {
+    console.log(typeof this.state.imageURL);
     return (
       <div className="Form">
         <header className="Form-header">
           <h1>Add Inventory</h1>
         </header>
-        <main className="Form-main" onSubmit={this.handleSubmit}>
-          <form className="Form-add">
+        <main className="Form-main">
+          <form className="Form-add" onSubmit={this.handleSubmit}>
             <picture className="Image-view">IMAGE</picture>
             <section className="Inputs-Container">
               <div className="Inputs">
