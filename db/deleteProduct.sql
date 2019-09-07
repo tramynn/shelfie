@@ -1,1 +1,3 @@
-DELETE FROM inventory WHERE product_id = $1;
+DELETE FROM inventory 
+WHERE id = $1
+RETURNING *;

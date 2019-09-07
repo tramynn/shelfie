@@ -62,8 +62,8 @@ const deleteProduct = (req, res, next) => {
 
   dbInstance
     .deleteProduct(id)
-    .then(() => {
-      res.sendStatus(200);
+    .then(product => {
+      res.status(200).json(product);
     })
     .catch(err => {
       res.status(500).json({
