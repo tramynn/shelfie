@@ -7,8 +7,9 @@ class Product extends Component {
       return (
         <div key={index}>
           <ul>
-            <li>{product.imageURL}</li>
-            <li>{product.productName}</li>
+            {/* When calling data from back-end, must make sure its the same naming convention from the database */}
+            <li>{product.image_url}</li>
+            <li>{product.product_name}</li>
             <li>{product.price}</li>
           </ul>
         </div>

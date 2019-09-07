@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+// import Dashboard from "../Dashboard/Dashboard";
+import { Link } from "react-router-dom";
 import "./Form.css";
 
 class Form extends Component {
@@ -41,7 +43,6 @@ class Form extends Component {
 
   cancelForm = () => {
     this.setState({
-      image: "",
       imageURL: "",
       productName: "",
       price: ""
@@ -56,7 +57,7 @@ class Form extends Component {
           <h1>Add Inventory</h1>
         </header>
         <main className="Form-main">
-          <form className="Form-add" onSubmit={this.handleSubmit}>
+          <form className="Form-add">
             <picture className="Image-view">IMAGE</picture>
             <section className="Inputs-Container">
               <div className="Inputs">
@@ -86,7 +87,10 @@ class Form extends Component {
             <div className="From-buttons-container">
               <section className="Form-buttons">
                 <button onClick={this.cancelForm}>Cancel</button>
-                <button type="submit">Add to Inventory</button>
+                {/* button handles event first (use onClick) and then it links to the page */}
+                <button onClick={this.handleSubmit}>
+                  <Link to="/">Add to Inventory</Link>
+                </button>
               </section>
             </div>
           </form>
