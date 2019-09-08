@@ -24,8 +24,7 @@ class Dashboard extends Component {
   }
 
   deleteProduct = id => {
-    Axios.delete(`/api/products/${id}`);
-    Axios.get("/api/inventory")
+    Axios.delete(`/api/products/${id}`)
       .then(response => {
         this.setState({
           products: response.data
