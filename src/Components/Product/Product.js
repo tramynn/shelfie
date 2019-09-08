@@ -12,7 +12,7 @@ class Product extends Component {
             <li>{product.product_name}</li>
             <li>{product.price}</li>
           </ul>
-          <button onClick={() => this.props.deleteProduct(this.props.id)}>
+          <button onClick={() => this.props.deleteProduct(product.id)}>
             Delete
           </button>
           <button>Edit</button>

@@ -37,14 +37,15 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { products, deleteProduct } = this.state;
+    const { products } = this.state;
     return (
       <div className="Dashboard">
         <header className="Dashboard-header">
           <h1>Dashboard</h1>
         </header>
         <main className="Products-display">
-          <Product products={products} deleteProduct={deleteProduct} />
+          {/* map because it has to find which product to delete */}
+          <Product products={products} deleteProduct={this.deleteProduct} />
         </main>
       </div>
     );
