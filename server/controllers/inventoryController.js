@@ -36,13 +36,13 @@ const getInventory = (req, res, next) => {
 
 const editProduct = (req, res, next) => {
   const dbInstance = req.app.get("db");
-
-  const { params } = req;
-  // always destucture req.body bc put
+  // destructure id from req.params
+  const { id } = req.params;
+  // destructure properties from req.body
   const { image_url, product_name, price } = req.body;
 
   dbInstance
-    .editProduct(image_url, product_name, price, params.id)
+    .editProduct([id, image_url, product_name, price])
     .then(() => {
       res.sendStatus(200);
     })
